@@ -4,12 +4,12 @@
 
 	const concerts = [
 		{
-			latitude: 47.37515142664481,
-			longitude: 8.534933254122734,
-			zoom: 17,
-			locationLabel: 'Stall 6'
+			latitude: 45.8150108,
+			longitude: 15.981919,
+			zoom: 12,
+			locationLabel: 'Zagreb'
 		},
-		{ latitude: 47.3847973, longitude: 8.5201642, zoom: 10, locationLabel: 'Hive Club' }
+		{ latitude: 40.7127837, longitude: -74.0059413, zoom: 10, locationLabel: 'New York' }
 	];
 </script>
 

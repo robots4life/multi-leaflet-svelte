@@ -39,7 +39,7 @@
 		if (map) {
 			map.remove();
 		}
-		// map.remove();
+		map.remove();
 		console.log(map);
 	});
 </script>

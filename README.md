@@ -1,6 +1,7 @@
 1.  https://github.com/robots4life/multi-leaflet-svelte/blob/master/src/components/LeafletMap.svelte#L45
 
 Why does `map.remove()` here lead to this error ? If it is inside the condition it works ok.
+After `map.remove()` is called `map` can still be logged..
 
 ```js
 Map.js:747 Uncaught (in promise) Error: Map container is being reused by another instance

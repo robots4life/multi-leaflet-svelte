@@ -40,6 +40,7 @@
 			console.log('Removing map..');
 			console.log(map);
 			map.remove();
+			console.log(map);
 		}
 		// this breaks - why ?
 		// map.remove();

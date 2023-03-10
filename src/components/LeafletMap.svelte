@@ -37,17 +37,21 @@
 
 	onDestroy(() => {
 		if (map) {
+			console.log('Removing map..');
+			console.log(map);
 			map.remove();
 		}
-		map.remove();
-		console.log(map);
+		// this breaks - why ?
+		// map.remove();
 	});
 </script>
 
 <div class="leaflet-map-container" bind:this={container}>
-	<!-- {#if map}
-		<slot />
-	{/if} -->
+	{#if map}
+		{console.log(map)}
+		<!-- what is slot here use for ? -->
+		<!-- <slot /> -->
+	{/if}
 </div>
 
 <style>

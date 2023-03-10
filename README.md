@@ -17,6 +17,6 @@ Map.js:747 Uncaught (in promise) Error: Map container is being reused by another
     at destroy_component (index.mjs:2057:36)
 ```
 
-2.  https://github.com/robots4life/multi-leaflet-svelte/blob/master/src/components/LeafletMap.svelte#L52
+2.  https://github.com/robots4life/multi-leaflet-svelte/blob/master/src/components/LeafletMap.svelte#L54
 
 What is `<slot />` here used for ?

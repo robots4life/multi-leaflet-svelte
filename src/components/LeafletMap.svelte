@@ -43,6 +43,7 @@
 <style>
 	@import 'leaflet/dist/leaflet.css';
 	.leaflet-map-container {
+		border: 4px solid green;
 		height: 800px;
 	}
 </style>

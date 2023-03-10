@@ -12,4 +12,5 @@
 
 {#each concerts as concert}
 	<LeafletMap latitude={concert.latitude} longitude={concert.longitude} zoom={concert.zoom} />
+	<hr />
 {/each}

@@ -29,7 +29,11 @@
 
 	<!-- {#each concerts as concert}
 		<LeafletMap latitude={concert.latitude} longitude={concert.longitude} zoom={concert.zoom}>
-			<LeafletMarker latitude={concert.latitude} longitude={concert.longitude} /></LeafletMap
+			<LeafletMarker
+				latitude={concert.latitude}
+				longitude={concert.longitude}
+				locationLabel={concert.locationLabel}
+			/></LeafletMap
 		>
 		<hr />
 	{/each} -->

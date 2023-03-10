@@ -1,7 +1,7 @@
 <script>
 	// https://svelte.dev/tutorial/context-api
+	// import { onMount, onDestroy, setContext } from 'svelte';
 	import { onDestroy, onMount } from 'svelte';
-	// import { onDestroy, onMount } from 'svelte';
 
 	// import { leaflet, key } from '$lib/leaflet.js';
 	import { leaflet } from '$lib/leaflet.js';
@@ -28,7 +28,7 @@
 			})
 			.addTo(map);
 
-		leaflet.marker([latitude, longitude]).addTo(map).bindPopup({ locationLabel }).openPopup();
+		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
 	}
 
 	onMount(() => {

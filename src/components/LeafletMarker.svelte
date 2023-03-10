@@ -7,10 +7,7 @@
 
 	export let latitude;
 	export let longitude;
+	export let locationLabel;
 
-	leaflet
-		.marker([latitude, longitude])
-		.addTo(map)
-		.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-		.openPopup();
+	leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
 </script> -->

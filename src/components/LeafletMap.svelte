@@ -1,6 +1,6 @@
 <script>
 	// https://svelte.dev/tutorial/context-api
-	import { onDestroy, setContext } from 'svelte';
+	import { onDestroy, onMount, setContext } from 'svelte';
 	import { leaflet, key } from '$lib/leaflet.js';
 
 	setContext(key, {
@@ -22,12 +22,11 @@
 					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			})
 			.addTo(map);
-		leaflet
-			.marker([latitude, longitude])
-			.addTo(map)
-			.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-			.openPopup();
 	}
+
+	onMount(() => {
+		load();
+	});
 
 	onDestroy(() => {
 		if (map) map.remove();
@@ -45,5 +44,8 @@
 	.leaflet-map-container {
 		border: 4px solid green;
 		height: 800px;
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>

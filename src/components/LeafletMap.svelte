@@ -36,7 +36,11 @@
 	});
 
 	onDestroy(() => {
-		if (map) map.remove();
+		if (map) {
+			map.remove();
+		}
+		// map.remove();
+		console.log(map);
 	});
 </script>
 
@@ -50,7 +54,7 @@
 	@import 'leaflet/dist/leaflet.css';
 	.leaflet-map-container {
 		border: 4px solid green;
-		height: 800px;
+		height: 300px;
 		width: 800px;
 		margin-left: auto;
 		margin-right: auto;

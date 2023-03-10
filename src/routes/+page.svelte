@@ -9,7 +9,9 @@
 			zoom: 12,
 			locationLabel: 'Zagreb'
 		},
-		{ latitude: 40.7127837, longitude: -74.0059413, zoom: 10, locationLabel: 'New York' }
+		{ latitude: 40.7127837, longitude: -74.0059413, zoom: 10, locationLabel: 'New York' },
+		{ latitude: 48.856614, longitude: 2.3522219, zoom: 15, locationLabel: 'Paris' },
+		{ latitude: 35.7090259, longitude: 139.73199249999993, zoom: 15, locationLabel: 'Tokyo' }
 	];
 </script>
 

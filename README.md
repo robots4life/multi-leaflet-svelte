@@ -1,38 +1,15 @@
-# create-svelte
+Without setContext and getContext Leaflet shows an error and cannot set the label on each map.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```js
+DivOverlay.js:285 Uncaught (in promise) TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
+    at NewClass._updateContent (DivOverlay.js:285:9)
+    at NewClass.update (DivOverlay.js:187:8)
+    at NewClass.onAdd (DivOverlay.js:113:8)
+    at NewClass.onAdd (Popup.js:135:30)
+    at NewClass._layerAdd (Layer.js:114:8)
+    at NewClass.whenReady (Map.js:1477:13)
+    at NewClass.addLayer (Layer.js:172:8)
+    at NewClass.openOn (DivOverlay.js:63:8)
+    at NewClass.openOn (Popup.js:131:38)
+    at NewClass.openPopup (Popup.js:430:17)
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

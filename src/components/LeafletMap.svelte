@@ -1,7 +1,7 @@
 <script>
 	// https://svelte.dev/tutorial/context-api
-	// import { onDestroy, onMount, setContext } from 'svelte';
 	import { onDestroy, onMount } from 'svelte';
+	// import { onDestroy, onMount } from 'svelte';
 
 	// import { leaflet, key } from '$lib/leaflet.js';
 	import { leaflet } from '$lib/leaflet.js';

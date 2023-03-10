@@ -1,26 +1,34 @@
 <script>
 	// https://svelte.dev/tutorial/context-api
-	import { onDestroy, onMount, setContext } from 'svelte';
-	import { leaflet, key } from '$lib/leaflet.js';
+	// import { onDestroy, onMount, setContext } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
-	setContext(key, {
-		getMap: () => map
-	});
+	// import { leaflet, key } from '$lib/leaflet.js';
+	import { leaflet } from '$lib/leaflet.js';
+
+	// setContext(key, {
+	// 	getMap: () => map
+	// });
 
 	export let latitude;
 	export let longitude;
 	export let zoom;
+	export let locationLabel;
 
 	let container;
 	let map;
 
 	function load() {
 		map = new leaflet.map(container).setView([latitude, longitude], zoom);
+
 		leaflet
 			.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: ''
+				attribution:
+					'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			})
 			.addTo(map);
+
+		leaflet.marker([latitude, longitude]).addTo(map).bindPopup({ locationLabel }).openPopup();
 	}
 
 	onMount(() => {

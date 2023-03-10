@@ -41,9 +41,9 @@
 </script>
 
 <div class="leaflet-map-container" bind:this={container}>
-	{#if map}
+	<!-- {#if map}
 		<slot />
-	{/if}
+	{/if} -->
 </div>
 
 <style>

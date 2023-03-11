@@ -1,15 +1,6 @@
 <script>
-	// https://svelte.dev/tutorial/context-api
-	// import { onMount, onDestroy, setContext } from 'svelte';
-	import { onDestroy, onMount } from 'svelte';
-
-	// import { leaflet, key } from '$lib/leaflet.js';
+	import { onMount, onDestroy } from 'svelte';
 	import { leaflet } from '$lib/leaflet.js';
-
-	// setContext(key, {
-	// 	getMap: () => map
-	// });
-
 	export let latitude;
 	export let longitude;
 	export let zoom;
@@ -18,7 +9,7 @@
 	let container;
 	let map;
 
-	function load() {
+	onMount(() => {
 		map = new leaflet.map(container).setView([latitude, longitude], zoom);
 
 		leaflet
@@ -29,10 +20,6 @@
 			.addTo(map);
 
 		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
-	}
-
-	onMount(() => {
-		load();
 	});
 
 	onDestroy(() => {
@@ -50,8 +37,6 @@
 <div class="leaflet-map-container" bind:this={container}>
 	{#if map}
 		{console.log(map)}
-		<!-- what is slot here use for ? -->
-		<!-- <slot /> -->
 	{/if}
 </div>
 

@@ -1,6 +1,5 @@
 <script>
 	import LeafletMap from '$components/LeafletMap.svelte';
-	// import LeafletMarker from '$components/LeafletMarker.svelte';
 
 	const concerts = [
 		{
@@ -28,17 +27,6 @@
 		/>
 		<hr />
 	{/each}
-
-	<!-- {#each concerts as concert}
-		<LeafletMap latitude={concert.latitude} longitude={concert.longitude} zoom={concert.zoom}>
-			<LeafletMarker
-				latitude={concert.latitude}
-				longitude={concert.longitude}
-				locationLabel={concert.locationLabel}
-			/></LeafletMap
-		>
-		<hr />
-	{/each} -->
 </div>
 
 <style>

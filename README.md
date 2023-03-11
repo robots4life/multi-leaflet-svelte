@@ -1,7 +1,23 @@
 1.  https://github.com/robots4life/multi-leaflet-svelte/blob/master/src/components/LeafletMap.svelte#L33
 
-Why does `map.remove()` here lead to this error ? If it is inside the condition it works ok.
-After `map.remove()` is called `map` can still be logged..
+Why does `map.remove()` here lead to this error ?
+If it is inside the condition it works ok.
+
+Also after `map.remove()` is called `map` can still be logged, why is that ?
+How can I check that after `map.remove()` and when navigating to `/page`, so when `onDestroy` is finished, the `map` is not left in memory or inside the component ?
+
+```js
+onDestroy(() => {
+	if (map) {
+		console.log('Removing map..');
+		console.log(map);
+		map.remove();
+		console.log(map);
+	}
+	// this breaks - why ?
+	// map.remove();
+});
+```
 
 ```js
 Map.js:747 Uncaught (in promise) Error: Map container is being reused by another instance

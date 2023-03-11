@@ -30,7 +30,7 @@
 			console.log(map);
 		}
 		// this breaks - why ?
-		// map.remove();
+		map.remove();
 	});
 </script>
 

@@ -20,18 +20,25 @@
 			.addTo(map);
 
 		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
-	});
 
-	onDestroy(() => {
-		if (map) {
+		return () => {
 			console.log('Removing map..');
 			console.log(map);
 			map.remove();
 			console.log(map);
-		}
-		// this breaks - why ?
-		// map.remove();
+		};
 	});
+
+	// onDestroy(() => {
+	// 	if (map) {
+	// 		console.log('Removing map..');
+	// 		console.log(map);
+	// 		map.remove();
+	// 		console.log(map);
+	// 	}
+	// 	// this breaks - why ?
+	// 	// map.remove();
+	// });
 </script>
 
 <div class="leaflet-map-container" bind:this={container}>

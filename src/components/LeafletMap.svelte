@@ -1,5 +1,5 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { leaflet } from '$lib/leaflet.js';
 	export let latitude;
 	export let longitude;
@@ -9,7 +9,7 @@
 	let container;
 	let map;
 
-	onMount(() => {
+	onMount(async () => {
 		map = new leaflet.map(container).setView([latitude, longitude], zoom);
 
 		leaflet
@@ -21,24 +21,27 @@
 
 		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
 
-		return () => {
+		// return async () => {
+		// 	console.log('Removing map..');
+		// 	console.log(map);
+		// 	map.remove();
+		// 	await tick();
+
+		// 	console.log(map);
+		// };
+	});
+
+	onDestroy(async () => {
+		if (map) {
 			console.log('Removing map..');
 			console.log(map);
 			map.remove();
+			await tick();
 			console.log(map);
-		};
+		}
+		// this breaks - why ?
+		// map.remove();
 	});
-
-	// onDestroy(() => {
-	// 	if (map) {
-	// 		console.log('Removing map..');
-	// 		console.log(map);
-	// 		map.remove();
-	// 		console.log(map);
-	// 	}
-	// 	// this breaks - why ?
-	// 	// map.remove();
-	// });
 </script>
 
 <div class="leaflet-map-container" bind:this={container}>

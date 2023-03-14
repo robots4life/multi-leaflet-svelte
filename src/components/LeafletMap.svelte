@@ -24,6 +24,8 @@
 
 	onDestroy(() => {
 		if (map) {
+			// https://discord.com/channels/525725325007650828/1081935571015958528/1084506148192931921
+			// https://leafletjs.com/reference.html#map-remove
 			map.remove();
 			map = null;
 			console.log(map);

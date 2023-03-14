@@ -20,35 +20,17 @@
 			.addTo(map);
 
 		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
-
-		// return async () => {
-		// 	console.log('Removing map..');
-		// 	console.log(map);
-		// 	map.remove();
-		// 	await tick();
-
-		// 	console.log(map);
-		// };
 	});
 
+	// https://discord.com/channels/525725325007650828/1081935571015958528/1084506148192931921
 	onDestroy(async () => {
-		if (map) {
-			console.log('Removing map..');
-			console.log(map);
-			map.remove();
-			await tick();
-			console.log(map);
-		}
-		// this breaks - why ?
-		// map.remove();
+		map.remove();
+		map = null;
+		console.log(map);
 	});
 </script>
 
-<div class="leaflet-map-container" bind:this={container}>
-	{#if map}
-		{console.log(map)}
-	{/if}
-</div>
+<div class="leaflet-map-container" bind:this={container} />
 
 <style>
 	@import 'leaflet/dist/leaflet.css';

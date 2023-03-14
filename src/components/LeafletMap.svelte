@@ -22,7 +22,6 @@
 		leaflet.marker([latitude, longitude]).addTo(map).bindPopup(locationLabel).openPopup();
 	});
 
-	// https://discord.com/channels/525725325007650828/1081935571015958528/1084506148192931921
 	onDestroy(() => {
 		if (map) {
 			map.remove();

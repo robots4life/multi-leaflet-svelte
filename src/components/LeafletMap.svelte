@@ -9,7 +9,7 @@
 	let container;
 	let map;
 
-	onMount(async () => {
+	onMount(() => {
 		map = new leaflet.map(container).setView([latitude, longitude], zoom);
 
 		leaflet
@@ -23,10 +23,12 @@
 	});
 
 	// https://discord.com/channels/525725325007650828/1081935571015958528/1084506148192931921
-	onDestroy(async () => {
-		map.remove();
-		map = null;
-		console.log(map);
+	onDestroy(() => {
+		if (map) {
+			map.remove();
+			map = null;
+			console.log(map);
+		}
 	});
 </script>
 
